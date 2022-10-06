@@ -1,12 +1,16 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navigation } from "./components";
-import { Home } from "./pages";
+import { Home, SavedCharactersPage } from "./pages";
 
 function App() {
   return (
     <div className="bg-[color:var(--body-bg)] h-screen">
       <Navigation />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/saved" element={<SavedCharactersPage />} />
+      </Routes>
     </div>
   );
 }
