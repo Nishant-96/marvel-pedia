@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-color: #cd0f28;
+  --font-color: #202020;
+  --body-bg: #fefefe;
+  --black-overlay: hsla(0, 20%, 2%, 0.7);
+}
+
+* {
+  font-family: "Roboto", "Montserrat", sans-serif;
+}
