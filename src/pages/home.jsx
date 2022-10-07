@@ -55,9 +55,15 @@ export function Home() {
                   src="/images/marvel-background.jpg"
                 />
               </div>
-              <div className="font-semibold text-xl text-center">
-                Start Searching
-              </div>
+              {state?.noDataFoundFlag ? (
+                <div className="font-bold text-3xl text-center">
+                  No Such Character Found
+                </div>
+              ) : (
+                <div className="font-semibold text-xl text-center">
+                  Start Searching
+                </div>
+              )}
             </div>
           )}
         </div>

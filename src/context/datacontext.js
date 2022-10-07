@@ -9,6 +9,7 @@ const initialState = {
   characterName: "",
   characterListArr: [],
   savedCharacterListArr: [],
+  noDataFoundFlag: false,
 };
 
 const DataProvider = function ({ children }) {
@@ -20,10 +21,17 @@ const DataProvider = function ({ children }) {
       (async () => {
         try {
           const res = await getCharacters(state.characterName);
-          if (res) {
+          if (res.count > 0) {
             dispatch({
               type: "SET_CHARACTER_LIST_ARR",
-              payload: { value: res },
+              payload: { value: res.results },
+            });
+            dispatch({ type: "SET_NO_DATA_FLAG", payload: { value: false } });
+          } else {
+            dispatch({ type: "SET_NO_DATA_FLAG", payload: { value: true } });
+            dispatch({
+              type: "SET_CHARACTER_LIST_ARR",
+              payload: { value: [] },
             });
           }
         } catch (error) {

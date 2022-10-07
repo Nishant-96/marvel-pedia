@@ -23,6 +23,8 @@ export function reducerFunc(state, action) {
           (currCharacter) => currCharacter.id !== action.payload.value
         ),
       });
+    case "SET_NO_DATA_FLAG":
+      return (state = { ...state, noDataFoundFlag: action.payload.value });
     default:
       break;
   }
