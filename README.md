@@ -26,8 +26,8 @@ $ npm start
 <br />
 
 - [Home Page](https://marvel-pedian.netlify.app/)
-- Saved Characters Page
-- Single Character Description Page
+- Saved Characters Page (Keeps a list of all the saved characters)
+- Single Character Description Page (A page for each character have information Name, Image, Description, number of presencs in stories, series and comics.)
 <br />
 
 
